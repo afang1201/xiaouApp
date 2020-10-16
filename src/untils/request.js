@@ -3,7 +3,7 @@ import store from '../store'
 // 请求拦截
 axios.interceptors.request.use(req => {
   console.log(req.url);
-  if (req.url !== '/api/api/login') {
+  if (req.url !== '/api/api/login' && req.url !== '/api/api/register') {
     console.log( store.state.loginInfo)
     req.headers.authorization = store.state.loginInfo.list.token
   }
