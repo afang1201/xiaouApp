@@ -1,11 +1,9 @@
 import axios from "axios"
 // 请求拦截
 axios.interceptors.request.use(req => {
-  console.log(req.url);
   if (req.url !== '/api/api/login' && req.url !== '/api/api/register') {
     req.headers.authorization = localStorage.getItem('token')
   }
-  console.log(req)
   return req
 })
 //打印发起的ajax请求

@@ -78,7 +78,6 @@ export default {
     }),
     //获得商品列表信息
     async getShop() {
-      console.log(9999)
       let uid = localStorage.getItem('uid')
       await this.requestShoplist(uid)
       console.log(this.shopList)
