@@ -6,7 +6,7 @@
       <img src="/static/img/home/logo.jpg" alt class="logo" />
       <div class="search-wrap">
         <!-- 头部搜索框 -->
-        <div class="search">寻找商品</div>
+        <div class="search" @click="logOut">返回登录</div>
       </div>
     </div>
     <!-- 商品 -->
@@ -37,7 +37,7 @@
       <!-- 商品列表---动态渲染 -->
       <div class="list">
         <a :href="'#/detail?id='+item.id" class="item" v-for="item in shopList" :key="item.id">
-          <img :src="'/static/img'+item.img" class="item-img" />
+          <img :src="'http://localhost:3000/'+item.img" class="item-img" />
           <div class="item-con">
             <div class="goodsname">{{item.goodsname}}</div>
             <div class="price">￥{{item.price | filterPrice}}</div>
@@ -53,21 +53,15 @@
 import { mapActions,mapGetters } from 'vuex'
 import shopVue from './shop.vue'
 export default {
-  // data() {
-  //   // return {
-  //   //   // 商品信息
-  //   //   shopList: [],
-  //   // }
-  // },
   methods: {
-    //获取主页商品信息
-    // async getShopList() {
-    //   const { data: data } = await this.$axios.get('/api/api/getindexgoods')
-    //   this.shopList = data.list[0].content
-    // }
     ...mapActions({
       'requestShopList':'home/requestShopList'
-    })
+    }),
+    logOut(){
+      localStorage.removeItem('uid')
+      localStorage.removeItem('token')
+      this.$router.push('/login')
+    }
   },
  mounted() {
     this.requestShopList()

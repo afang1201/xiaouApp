@@ -13,7 +13,7 @@
       </div>
       <div class="right">
         <div class="every" v-for="item in fenleiShop" :key="item.id" @click="list(item.id)">
-          <img :src="'/static/img'+item.img" class="img" />
+          <img :src="'http://localhost:3000/'+item.img" class="img" />
           <div class="text">{{item.catename}}</div>
         </div>
       </div>

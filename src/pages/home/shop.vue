@@ -14,7 +14,7 @@
               <img :src="item.checkedimg" class="left-img" />
             </div>
             <div class="center">
-              <img :src="'/static/img'+item.img" class="center-img" />
+              <img :src="'http://localhost:3000/'+item.img" class="center-img" />
             </div>
             <div class="right">
               <div class="r-left">

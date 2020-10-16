@@ -49,10 +49,11 @@ export default {
       await this.requestLoginList(this.loginList)
       if (this.loginInfo.code != 200) {
         alert('登录失败请检查账号密码')
-        this.$router.push('/login')
+        this.$router.push('/register')
         return
       }
       localStorage.setItem('uid', this.loginInfo.list.uid)
+      localStorage.setItem('token', this.loginInfo.list.token)
       await this.$router.push('/index/home')
     },
   },

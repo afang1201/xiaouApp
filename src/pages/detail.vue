@@ -5,7 +5,7 @@
       <go-back></go-back>
       <span>{{shopInfo.goodsname}}</span>
     </div>
-    <img :src="'/static/img'+shopInfo.img" class="bigimg" />
+    <img :src="'http://localhost:3000/'+shopInfo.img" class="bigimg" />
     <div class="info">
       <div class="line1">
         <div class="name">{{shopInfo.goodsname}}</div>
@@ -34,7 +34,7 @@
     <!-- 弹出框 -->
     <div class="picker" v-if='onOff'>
       <div class="info">
-        <img :src="'/static/img'+shopInfo.img" alt />
+        <img :src="'http://localhost:3000/'+shopInfo.img" alt />
         <span>{{shopInfo.goodsname}}</span>
       </div>
       <div class="sku">

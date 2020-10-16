@@ -52,7 +52,6 @@ export default {
     //此处必须定义async await 否则无法获取registerInfo数据
     async register(){
       await this.requestRegisterInfo(this.registerList)
-      console.log(this.registerInfo);
       alert(this.registerInfo.msg)
       if(this.registerInfo.code===200){
         this.$router.push('/login')

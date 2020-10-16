@@ -7,7 +7,7 @@
     </div>
     <div class="list">
       <a  class="item" v-for="item in shopList" :key='item.id' @click="detail(item.id)">
-        <img :src="'/static/img'+item.img"  class="item-img" />
+        <img :src="'http://localhost:3000/'+item.img"  class="item-img" />
         <div class="item-con">
           <div class="goodsname">{{item.goodsname}}</div>
           <div class="price">￥{{item.market_price}}</div>

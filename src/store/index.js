@@ -3,7 +3,6 @@ import Vuex from "vuex"
 import {  reqLogin } from "../untils/request"
 Vue.use(Vuex)
 
-import login from "./modules/login"
 import register from "./modules/register"
 import home from './modules/home'
 import fenlei from "./modules/fenlei"
@@ -40,7 +39,6 @@ export default new Vuex.Store({
     },
     //模块
     modules:{
-        login:login,
         register:register,
         home:home,
         fenlei:fenlei,
